@@ -14,22 +14,23 @@ app.use(bodyParser.json());
 
 //rutas
 app.get('/test', function (req, res) {
-    res.status(200).send('<h1>Página de inicio-Gabriela</h1>'+'<br><h1>La mejooo</h1>'
-    );
+  res.status(200).send({
+   message: 'conexion exitosa en test'
+   });
 
 });
 
-// app.get('/test', function (req, res) {
-//     res.status(200).send({
-//         message: 'conexion exitosa'
-//     })
-// });
+app.get('/test1', function (req, res) {
+ // res.status(200).send({
+ // message: 'conexion exitosa'
+ // });
+   res.render('index');
+});
 
 app.get('/test2', function(req,res){
-    // res.status(200).send({
-    //     message: 'conexion exitosa'
-    res.render('index');
-    
+  res.send({
+      message: 'conexion exitosa texst2'
+  })
 });
 
 //metodo para exportar modulos o variables
