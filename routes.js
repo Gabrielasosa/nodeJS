@@ -61,15 +61,36 @@ app.post('/proyectos/delete', function (req, res) {
 });
 
 
-//modificar registros
+//modificar registros, modifica a la vez el nombre y la categoria
 app.post('/proyectos/update', function (req, res) {
-    let sql = `UPDATE proyectos set name='${req.body.name}' where id = '${req.body.id}'`;
+    let sql = `UPDATE proyectos set nombre='${req.body.nombre}' where id = '${req.body.id}'`;
     con.query(sql, function (err, result) {
         if (err) {
             res.send(err);
         }
         else {
             res.send(result);
+            // let proyecto={
+            //     name: req.body.name
+            // }
         }
     });
 });
+
+//modificar categoria
+app.post('/proyectos/update', function (req, res) {
+    let sql = `UPDATE proyectos set categoria='${req.body.categoria}' where id = '${req.body.id}'`;
+    con.query(sql, function (err, result) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            res.send(result);
+            // let proyecto={
+            //     name: req.body.name
+            // }
+        }
+    });
+});
+
+

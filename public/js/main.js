@@ -39,11 +39,12 @@ $(document).ready(function () {
         let item = $(this).parent();
         let id = item.attr('id');
         let name = $(this).val();
-        $.post('http://localhost:3000/proyectos/update', { id: id, name: name }, function (proyecto) {
+        
+        $.post('http://localhost:3000/proyectos/update', { id: id, nombre: name,}, function (proyecto) {
             item.html(name + '<button class="eliminarProyecto">' + 'Eliminar proyecto</button>' +
-                '<input type="text" class="nuevoNombre">' + '</li>');
+            '<input type="text" class="nuevoNombre">' + '</li>'); 
         });
     });
-
+   
 });//fin document
 
