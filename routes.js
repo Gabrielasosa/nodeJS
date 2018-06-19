@@ -77,7 +77,7 @@ app.post('/proyectos/update', function (req, res) {
     });
 });
 
-//modificar categoria
+//modificar categoria pa luego /intentar crear otro boton y un imput para modificar la categoria
 app.post('/proyectos/update', function (req, res) {
     let sql = `UPDATE proyectos set categoria='${req.body.categoria}' where id = '${req.body.id}'`;
     con.query(sql, function (err, result) {
