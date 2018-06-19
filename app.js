@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var port =3000;
 var app = express();
 //configuracion de archivos
 app.use(express.static(__dirname + '/public'));
@@ -11,6 +11,12 @@ app.set('view engine', 'html');
 //middlelware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+ //creacion del servidor
+ app.listen(port, () => {
+  console.log('Servidor corriendo correctamente');
+});//final app.listen
+
 
 //rutas
 app.get('/test', function (req, res) {
