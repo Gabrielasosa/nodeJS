@@ -1,26 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css" />
 
+<head>
+  <title>Title</title>
+  <!-- meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+  <!-- fonts CSS-->
+  <link rel="stylesheet" type="text/css" media="screen" href="css/fontawesome-all.min.css" />
+  <!-- Jquery CSS-->
+  <link rel="stylesheet" href="js/lib/jquery-ui-1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="js/lib/jquery-ui-1.12.1/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="js/lib/jquery-ui-1.12.1/jquery-ui.theme.min.css">
+  <!-- JavaScript 1ºjQuery, 2ºPopper.js, 3º Bootstrap JS (internos)-->
   <script src="../js/lib/jquery-3.3.1.min.js"></script>
-  <script src="../js/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+  <script src="../js/lib/popper.min.js"></script>
   <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+  <script src="../js/main.js"></script>
 </head>
+
 <body>
   <h1>
     Pagina Gabriela En HTML
   </h1>
-  <script>
- $.get('http://localhost:3000/test', function(res){
-       console.log(res)
-   })
-  </script>
+  <div class="container">
+
+    <form id="insert">
+      <label for="nombre">Nombre</label>
+      <input name="name" type="text" id="name">
+      <br>
+      <label for="category" >Categoria</label>
+      <input name="categoria" type="text" id="cat">
+      <br>
+      <label for="language">Lenguaje</label>
+      <input name="lenguaje" type="text" id="leng">
+      <br>
+      <label for="fecha">Fecha</label>
+      <input name="date" type="text">
+      <br>
+      <button type="button" id="enviarInsert">Guardar proyecto</button>
+    </form>
+    <br>
+    <ul id="listaProyectos">
+
+    </ul>
+  </div>
+
+  <!-- mostramos los registros que vamos creando -->
+  <ul id="listaProyectos">
+
+  </ul>
+  <!-- <script>
+            $.get('http://localhost:3000/index.html', function (res) {
+              console.log(res)
+            })
+          </script> -->
 
 
+
+
+  <!-- 1ºjQuery, 2ºPopper.js, 3º Bootstrap JS (links externos) 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
 </body>
+
 </html>

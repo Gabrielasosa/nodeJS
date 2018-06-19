@@ -1,14 +1,14 @@
 var mysql = require('mysql');
-var con =  mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "portafolio"
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "portafolio"
 });
 
 con.connect(function (err) {
-  if (err) throw err;
-  console.log("Connected!");
+    if (err) throw err;
+    console.log("Connected!");
 });
 //metodo para exportar modulos o variables
-module.exports=con;
+module.exports = con;
