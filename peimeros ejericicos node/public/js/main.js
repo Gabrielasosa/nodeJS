@@ -18,7 +18,7 @@ $(document).ready(function () {
         //let formulario = $("#insert").serialize() esto es para ordenar un conjunto de datos
         $.post('http://localhost:3000/proyectos/add', { nombre: data, categoria: data2, lenguaje: data3 }, function (proyecto) {//mostrar la lista
             lista.append('<li id="' + proyecto.id + '">' + proyecto.nombre + ' ,' + proyecto.categoria + ' ,' + proyecto.lenguaje
-                + '<button class="eliminarProyecto">' + 'Eliminar Proyecto </button>' +
+                + '<button class="eliminarProyectos">' + 'Eliminar Proyecto </button>' +
                 '<input type="text" class="nuevoNombre"' + '</li>'
 
             );
