@@ -17,7 +17,7 @@ app.post('/proyectos/add', function (req, res) {
         }
         else {
             let proyecto = {
-                id: result.idTareas,
+                id: result.id,
                 nombre: req.body.nombre,
                 categoria: req.body.estado
             }
@@ -46,7 +46,7 @@ app.get('/proyectos', function (req, res) {
 
 //eliminar proyectos
 app.post('/proyectos/delete', function (req, res) {
-    let sql = `DELETE FROM tareas where id = '${req.body.idTareas}'`;
+    let sql = `DELETE FROM tareas where id = '${req.body.id}'`;
     con.query(sql, function (err, result) {
         if (err) {
             res.send(err);
@@ -59,7 +59,7 @@ app.post('/proyectos/delete', function (req, res) {
 
 //modificar registros, modifica a la vez el nombre y la categoria
 app.post('/proyectos/update', function (req, res) {
-    let sql = `UPDATE proyectos set estado='${req.body.estado}' where id = '${req.body.id}'`;
+    let sql = `UPDATE tareas set estado='${req.body.estado}' where id = '${req.body.id}'`;
     con.query(sql, function (err, result) {
         if (err) {
             res.send(err);
