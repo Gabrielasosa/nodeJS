@@ -19,7 +19,7 @@ app.post('/proyectos/add', function (req, res) {
             let proyecto = {
                 id: result.id,
                 nombre: req.body.nombre,
-                categoria: req.body.estado
+                estado: req.body.estado
             }
             res.send(proyecto);
         }
@@ -61,8 +61,11 @@ app.post('/proyectos/delete', function (req, res) {
 app.post('/proyectos/update', function (req, res) {
     let sql = `UPDATE tareas set estado='${req.body.estado}' where id = '${req.body.id}'`;
     con.query(sql, function (err, result) {
+        
         if (err) {
+            console.log(err)
             res.send(err);
+            
         }
         else {
             res.send(result);
