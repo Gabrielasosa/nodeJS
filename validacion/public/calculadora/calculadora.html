@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!doctype html>
+<html>
+
+<head>
+  <title>Calculadora</title>
+  <!-- meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css" />
+  <!-- fonts CSS-->
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/fontawesome-all.min.css" />
+  <!-- Jquery CSS-->
+  <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.theme.min.css">
+  <!-- JavaScript 1ºjQuery, 2ºPopper.js, 3º Bootstrap JS (internos)-->
+  <script src="../js/lib/jquery-3.3.1.min.js"></script>
+  <script src="../js/lib/popper.min.js"></script>
+  <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+  <!-- mis Script -->
+  <script src="../js/Mijs.js"></script>
+  <script src="../js/calculadora.js"></script>
+  <!-- mi CSS-->
+  <link rel="stylesheet" href="../css/micss.css">
+  <link rel="stylesheet" href="../css/calculadora.css">
+</head>
+
+<body>
+
+  <div class="container container1">
+
+    <!-- titulo -->
+    <div class="principal">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn btn-success">
+              <h1>PRACTICANDO JS </h1>
+            </button>
+          </div>
+          <div class="col">
+            <!-- columna vacia -->
+            <div id="ancla">
+              <!-- ancla para mostrar el contenido de arriba -->
+            </div>
+          </div>
+          <div class="col">
+
+
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="¿Que quieres buscar?" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <i class="fas fa-search"> </i>
+              </button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <!--Menú-->
+      <div class="container">
+        <nav class="navbar navbar-dark bg-dark principal">
+          <a class="nav-link nav-item active" href="../index.html">Inicio</a>
+          <a class="nav-link nav-item" href="./calculadora.html">calculadora</a>
+          <a class="nav-link nav-item" href="../reloj/reloj.html">Reloj</a>
+          <a class="nav-link nav-item" href="#">Juego Chapuza</a>
+          <a class="nav-link nav-item" href="#">Contacto</a>
+        </nav>
+      </div>
+      <!--final menu -->
+  <center>
+    <h1>Calculadora Gabriela</h1>
+    <form name="f1">
+        <input type="text" name="txtcaja1">
+        <br>
+        <input type="text" name="txtcaja2" value="0">
+        <br>
+        <input type="button" class="arit" onClick="arit('%')" value="%">
+        <input type="button" onClick="raiz()" value="√">
+        <input type="button" onClick="escribir('7')" value="x²">
+        <input type="button" onClick="escribir('7')" value="¹/×">
+        <br>
+        <input type="button" class="clear" onClick="document.f1.txtcaja2.value='0'" value="CE">
+        <input type="button" class="clear" onClick="document.f1.reset(); blocdel = false;" value="C">
+        <input type="button" class="clear" onClick="deletecarac()" value="◄">
+         
+        <input type="button" class="arit" onClick="arit('/')" value="÷">
+        <br>
+        <input type="button" onclick="escribir(this.value)" value="7">
+        <input type="button" onclick="escribir(this.value)" value="8">
+        <input type="button" onclick="escribir(this.value)" value="9">
+        <input type="button" class="arit" onClick="arit('*')" value="×">
+        <br>
+        <input type="button" onclick="escribir(this.value)" value="4">
+        <input type="button" onclick="escribir(this.value)" value="5">
+        <input type="button" onclick="escribir(this.value)" value="6">
+        <input type="button" class="arit" onClick="arit('-')" value="-">
+        <br>
+        <input type="button" onclick="escribir(this.value)" value="1">
+        <input type="button" onclick="escribir(this.value)" value="2">
+        <input type="button" onclick="escribir(this.value)" value="3">
+        <input type="button" class="arit" onClick="arit('+')" value="+">
+        <br>
+        <input type="button" class="arit" onClick="masmenos()" value="±">
+        <input type="button" onclick="escribir(this.value)" value="0">
+        <input type="button" onClick="escribir('.')" value=".">
+        <input type="button" class="igual" onClick="calcular()" value="=">
+        <br>
+      </div>
+    </form>
+  </center>
+</body>
+
+</html>
+
+<!---->

@@ -11,6 +11,8 @@ $(document).ready(function () {
                 '<input type="text" class="nuevoNombre"' + '</li>')
         });
     });//fin mostrar
+
+    //insertar datos
     boton.on('click', function () {
         let data = $('#name').val();
         let data2 = $('#cat').val();

@@ -1,0 +1,14 @@
+body {
+  background-image: url("../img/playa2.jpg");
+  /* background-image: url("../img/temas/tema1_1920.jpg"); */
+
+
+}
+.principal{
+      margin: 10px auto;
+      padding:20px;
+ }
+ .container1{
+  background-color: #cccccc;
+ }
+ 

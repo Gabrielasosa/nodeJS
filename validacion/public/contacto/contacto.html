@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Pagina Contacto</title>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css" />
+    <!-- fonts CSS-->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/fontawesome-all.min.css" />
+    <!-- Jquery CSS-->
+    <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.theme.min.css">
+    <!-- JavaScript 1ºjQuery, 2ºPopper.js, 3º Bootstrap JS (internos)-->
+    <script src="../js/lib/jquery-3.3.1.min.js"></script>
+    <script src="../js/lib/popper.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <!-- mis Script -->
+    <script src="../js/Mijs.js"></script>
+    <script src="../js/dni.js"></script>
+    <script src="../js/contacto.js"></script>
+    <!-- js para el flugin formilario -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+    <!-- mi CSS-->
+    <link rel="stylesheet" href="../css/micss.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <!-- css plugin formulario -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css"
+    rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="container container1">
+
+        <!-- titulo -->
+        <div class="principal">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn btn-success">
+                            <h1>PRACTICANDO JS </h1>
+                        </button>
+                    </div>
+                    <div class="col">
+                        <!-- columna vacia -->
+                        <div id="ancla">
+                            <!-- ancla para mostrar el contenido de arriba -->
+                        </div>
+                    </div>
+                    <div class="col">
+
+
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="¿Que quieres buscar?" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                                <i class="fas fa-search"> </i>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--Menú-->
+            <div class="container">
+                <nav class="navbar navbar-dark bg-dark principal">
+                    <a class="nav-link nav-item active" href="../index.html">Inicio</a>
+                    <a class="nav-link nav-item" href="../calculadora/calculadora.html">calculadora</a>
+                    <a class="nav-link nav-item" href="../reloj/reloj.html">Reloj</a>
+                    <a class="nav-link nav-item" href="../juego/juego.html">Juego</a>
+                    <a class="nav-link nav-item" href="./contacto.html">Contacto</a>
+                </nav>
+            </div>
+            <!--final menu -->
+            <!--Comienza el formulario -->
+            <div class="FomrCuerpo cuerpo">
+                <form id="formularioContacto" class="contacto">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" data-validation="required alphanumeric" name="name" id="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefono</label>
+                        <input type="text" class="form-control" data-validation="required number" name="phone" id="telefono">
+                    </div>
+                    <div>
+
+                        <label for="dni">Número DNI:</label>
+                        <input maxlength="8" id="dni" size="12"> Letra:
+                        <input id="letter" disabled="disabled" size="2">
+                        <br>
+                        <br>
+                        <input type="submit" value="Calcular" name="btnCalculate" class="btn btn btn-success">
+                        <input type="reset" value="Borrar" name="btnClear" onclick="focusDNI()" class="btn btn btn-success">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" data-validation="required email" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Direccion</label>
+                        <input type="text" class="form-control" data-validation="required alphanumeric" name="address" id="direccion">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Fecha de nacimiento</label>
+                        <input id='fecha' type="text" class="form-control" data-validation="required date" data-validation-format="dd/mm/yyyy" name="date">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="insert">Enviar</button>
+                    </div>
+                </form>
+
+            </div>
+            <!-- boton subir -->
+            <div>
+
+                <a href="#ancla" class="btn btn-success" role="button">Subir
+                    <i class="fas fa-angle-up"></i>
+                </a>
+
+            </div>
+            <!-- contenedor principal -->
+
+        </div>
+
+</body>
+
+</html>

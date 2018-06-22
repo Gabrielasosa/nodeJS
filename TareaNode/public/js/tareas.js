@@ -5,6 +5,7 @@ $(document).ready(function () {
     var tareasPendientes = $('#tareasPendientes');
     var tareasParaProbar = $('#tareasParaProbar');
     var tareasRealizadas = $('#tareasRealizadas');
+
 //llamada para que me lo pinte si o si 
 $.get('http://localhost:3000/proyectos/', function(tarea){
     console.log(tarea);
@@ -25,7 +26,7 @@ $.get('http://localhost:3000/proyectos/', function(tarea){
         
         $.post('http://localhost:3000/proyectos/add', { nombre: tarea, estado:"pendiente" }, function (tarea) {//mostrar la lista
         tareasPendientes.append('<li class="tareas" data-estado="pendiente" id="' + tarea.id + '">' + tarea.nombre + '  '
-            + '<button class="eliminarProyectos btn btn-primary">' + 'Eliminar </button>' + '</li>'
+            + '</li>'
 
         );
       
@@ -60,19 +61,22 @@ $.get('http://localhost:3000/proyectos/', function(tarea){
         console.log(id);
         // tarea.attr('data-estado', 'pendiente');
         
-       // $.post('http://localhost:3000/proyectos/delete', { id: id }, function (tarea) {
-            // console.log(tarea);
-    //});
+    //    $.post('http://localhost:3000/proyectos/delete', { id: id }, function (tarea) {
+    //         console.log(tarea);
+    // });
     tarea.on('click', '.eliminarProyectos', function () {
             let id = $(this).parent().attr('id');
          
             $.post('http://localhost:3000/proyectos/delete', { id: id }, function (tareas) {
           
-        });$(this).parent().remove();
         });
-        // tareasPendientes.append(tarea);
+        $(this).parent().remove();
+        });
+        tareasRealizadas.append(tarea);
     }
 })
+
+
 });
 
 

@@ -1,0 +1,188 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <title>Juego</title>
+  <!-- meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS 
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css" />
+  <!-- fonts CSS-->
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/fontawesome-all.min.css" />
+  <!-- Jquery CSS-->
+  <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="../js/lib/jquery-ui-1.12.1/jquery-ui.theme.min.css">
+  <!-- JavaScript 1ºjQuery, 2ºPopper.js, 3º Bootstrap JS (internos)-->
+  <script src="../js/lib/jquery-3.3.1.min.js"></script>
+  <script src="../js/lib/popper.min.js"></script>
+  <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+  <!-- mis Script -->
+
+  <script src="../js/Mijs.js"></script>
+  <script src="../js/juego.js"></script>
+
+  <!-- mi CSS-->
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" href="../css/micss.css">
+  <link rel="stylesheet" href="../css/juego.css">
+</head>
+
+<body onload="initialize()">
+
+  <div class="container">
+
+    <!-- titulo -->
+    <div class="principal">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn btn-success">
+              <h1>PRACTICANDO JS </h1>
+            </button>
+          </div>
+          <div class="col">
+            <!-- columna vacia -->
+            <div id="ancla">
+              <!-- ancla para mostrar el contenido de arriba -->
+            </div>
+          </div>
+          <div class="col">
+
+
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="¿Que quieres buscar?" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <i class="fas fa-search"> </i>
+              </button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <!--Menú-->
+      <div class="container">
+        <nav class="navbar navbar-dark bg-dark principal">
+          <a class="nav-link nav-item active" href="../index.html">Inicio</a>
+          <a class="nav-link nav-item" href="../calculadora/calculadora.html">calculadora</a>
+          <a class="nav-link nav-item" href="../reloj/reloj.html">Reloj</a>
+          <a class="nav-link nav-item" href="./juego.html">Juego</a>
+          <a class="nav-link nav-item" href="../contacto/contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <!--final menu -->
+      <!-- comienza el juego -->
+      <div class="container">
+      <div class="juego">
+        <h1>Tic-Tac-Toe</h1>
+        <table id="table_game">
+          <tr>
+            <td class="td_game">
+              <div id="cell0" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+            <td class="td_game">
+              <div id="cell1" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+            <td class="td_game">
+              <div id="cell2" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_game">
+              <div id="cell3" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+            <td class="td_game">
+              <div id="cell4" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+            <td class="td_game">
+              <div id="cell5" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_game">
+              <div id="cell6" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+            <td class="td_game">
+              <div id="cell7" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+            <td class="td_game">
+              <div id="cell8" onclick="cellClicked(this.id)" class="fixed"></div>
+            </td>
+          </tr>
+        </table>
+        <div id="restart" title="Start new game" onclick="restartGame(true)">
+          <span style="vertical-align:top;position:relative;top:-10px">#</span>
+        </div>
+        <table>
+          <tr>
+            <th class="th_list">Ordenador</th>
+            <th class="th_list" style="padding-right:10px;padding-left:10px">Empate</th>
+            <th class="th_list">Jugador</th>
+          </tr>
+          <tr>
+            <td class="td_list" id="computer_score">0</td>
+            <td class="td_list" style="padding-right:10px;padding-left:10px" id="tie_score">0</td>
+            <td class="td_list" id="player_score">0</td>
+          </tr>
+        </table>
+        <!-- The modal dialog for announcing the winner -->
+        <div id="winAnnounce" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('winAnnounce')">&times;</span>
+            <p id="winText"></p>
+          </div>
+        </div>
+        <!-- The dialog for getting feedback from the user -->
+        <div id="userFeedback" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <p id="questionText"></p>
+            <p>
+              <button id="yesBtn">Yes</button>&nbsp;
+              <button id="noBtn">No</button>
+            </p>
+          </div>
+        </div>
+        <!-- The options dialog -->
+        <div id="optionsDlg" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <h2>¿Como te gustaría jugar?</h2>
+            <h3>Dificultad:</h3>
+            <label>
+              <input type="radio" name="difficulty" id="r0" value="0">Facil&nbsp;</label>
+            <label>
+              <input type="radio" name="difficulty" id="r1" value="1" checked>Dificil</label>
+            <br>
+            <h3>Jugar como:</h3>
+            <label>
+              <input type="radio" name="player" id="rx" value="x" checked>X (Primero)&nbsp;</label>
+            <label>
+              <input type="radio" name="player" id="ro" value="o">O
+              <br>
+            </label>
+            <p>
+              <button id="okBtn" onclick="getOptions()">Jugar</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- contenedor principal -->
+
+    </div>
+
+
+    <!-- 1ºjQuery, 2ºPopper.js, 3º Bootstrap JS (links externos) 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+
+</body>
+
+</html>

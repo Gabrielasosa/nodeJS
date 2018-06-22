@@ -4,6 +4,8 @@ var app = require('./app');
 //rutas
 app.get('/', function (req, res) {
     res.render('index');
+    res.render('calculadora');
+    res.render('juego');
 });
 //ruta para añadir proyectos
 
