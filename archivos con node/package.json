@@ -1,0 +1,30 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "proyecto node gabriela",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabrielasosa/nodeJS.git"
+  },
+  "author": "Gabriela Sosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabrielasosa/nodeJS/issues"
+  },
+  "homepage": "https://github.com/Gabrielasosa/nodeJS#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-multiparty": "^2.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}

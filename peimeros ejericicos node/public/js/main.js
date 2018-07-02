@@ -8,7 +8,7 @@ $(document).ready(function () {
         proyectos.forEach(proyectos => {
             lista.append('<li id="' + proyectos.id + '">' + proyectos.nombre + ', ' + proyectos.categoria + ', ' + proyectos.lenguaje + //aqui proyectos lleva S porque estoy llamando los datos desde la base de datos
                 '<button class="eliminarProyectos">' + 'Eliminar Proyectos </button>' +
-                '<input type="text" class="nuevoNombre"' + '</li>')
+                '<input type="text" class="nuevoNombre"' + '</li>') 
         });
     });//fin mostrar
 
