@@ -25,13 +25,13 @@ var controller = {
         let sql = `UPDATE proyectos set nombre='${req.body.nombre}' where id = '${req.body.id}'`;
         con.query(sql, function (err, result) {
             if (err) {
-                return res.send(err);
+              return  res.send(err);
             }
             else {
                 let proyecto = {
                     name: req.body.name
                 }
-                return res.send(proyecto);
+               return res.send(proyecto);
             }
         });
     },
@@ -46,20 +46,20 @@ var controller = {
             }
         })
     },
-    consultProject: function (req, res) {
+        consultProject: function (req, res) {
         let sql = 'SELECT * from proyectos';
-        con.query(sql, function (err, result) {
-            if (err) {
-                res.send(err);
-            }
-            else {
-                res.send(result);
-            }
-        });
-    }
-
+                con.query(sql, function (err, result) {
+                    if (err) {
+                        res.send(err);
+                    }
+                    else {
+                        res.send(result);
+                    }
+                });
+        }
+    
 };
-
+   
 
 
 

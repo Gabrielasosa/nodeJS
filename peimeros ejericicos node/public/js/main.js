@@ -6,7 +6,7 @@ $(document).ready(function () {
     $.get('http://localhost:3000/proyectos/', function (proyectos) {
         console.log(proyectos)
         proyectos.forEach(proyectos => {
-            lista.append('<li id="' + proyectos.id + '">' + proyectos.nombre + ', ' + proyectos.categoria + ', ' + proyectos.lenguaje + ' '+//aqui proyectos lleva S porque estoy llamando los datos desde la base de datos
+            lista.append('<li id="' + proyectos.id + '">' + proyectos.nombre + ', ' + proyectos.categoria + ', ' + proyectos.lenguaje + //aqui proyectos lleva S porque estoy llamando los datos desde la base de datos
                 '<button class="eliminarProyectos">' + 'Eliminar Proyectos </button>' +
                 '<input type="text" class="nuevoNombre"' + '</li>') 
         });
@@ -19,7 +19,7 @@ $(document).ready(function () {
         let data3 = $('#leng').val();
         //let formulario = $("#insert").serialize() esto es para ordenar un conjunto de datos
         $.post('http://localhost:3000/proyectos/add', { nombre: data, categoria: data2, lenguaje: data3 }, function (proyecto) {//mostrar la lista
-            lista.append('<li id="' + proyecto.id + '">' + proyecto.nombre + ' ,' + proyecto.categoria + ' ,' + proyecto.lenguaje+'   '+
+            lista.append('<li id="' + proyecto.id + '">' + proyecto.nombre + ' ,' + proyecto.categoria + ' ,' + proyecto.lenguaje+''
                 + '<button class="eliminarProyectos">' + 'Eliminar Proyecto'+'</button>' +
                 '<input type="text" class="nuevoNombre"' + '</li>'
 
