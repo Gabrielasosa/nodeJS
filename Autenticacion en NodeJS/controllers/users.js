@@ -1,6 +1,6 @@
 var con = require('../config');
 var app = require('../app');
-var bcrypt = require('bcrypt-nodejs');
+var bcrypt = require('bcrypt-nodejs');//con esto encripto las contraseñas
 var controller = {
     registerUser: function (req, res) {
         let password = req.body.password;
